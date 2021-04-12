@@ -21,20 +21,22 @@ export default function App() {
         </ul>
       </nav>
 
-      <Switch>
-        <Route path="/show">
-          <Show />
-        </Route>
-        <Route path="/venue">
-          <Venue />
-        </Route>
-        <Route path="/song">
-          <Song />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
+      <main>
+        <Switch>
+          <Route path="/show">
+            <Show />
+          </Route>
+          <Route path="/venue">
+            <Venue />
+          </Route>
+          <Route path="/song">
+            <Song />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </main>
     </div>
   );
 }

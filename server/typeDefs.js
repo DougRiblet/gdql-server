@@ -57,7 +57,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    createShow(date: String!, venue: ID!): Show!
+    createShow(date: String!, venueId: ID!): Show!
     createSong(title: String!, source: Source!): Song!
     createVenue(site: String!, city: String!): Venue!
   }

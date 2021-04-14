@@ -49,6 +49,18 @@ const typeDefs = gql`
     COVER
     TRADITIONAL
   }
+
+  type Query {
+    show(date: String!): Show
+    venue(id: ID!): Venue
+    song(id: ID!): Song
+  }
+
+  type Mutation {
+    createShow(date: String!, venue: ID!): Show!
+    createSong(title: String!, source: Source!): Song!
+    createVenue(site: String!, city: String!): Venue!
+  }
 `
 
 export default typeDefs;

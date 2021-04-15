@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/server.js",
     "lint": "eslint --ext .jsx client",
     "flow": "flow"
   },
@@ -34,6 +35,7 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "flow-bin": "^0.148.0",
     "jest": "^26.6.3",
+    "nodemon": "^2.0.7",
     "redux-devtools": "^3.7.0",
     "webpack": "^5.31.2"
   }

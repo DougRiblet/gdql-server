@@ -5,6 +5,7 @@ const typeDefs = gql`
     id: ID!
     date: String!
     venue: Venue!
+    venueId: String!
     setlist: [Track]
     note: [String]
     tuning: [String]
@@ -16,9 +17,9 @@ const typeDefs = gql`
     id: ID!
     title: String!
     aka: [String]
-    author: [Songwriter]
+    writer: [Songwriter]
     source: Source!
-    tracks: [Track]
+    played: [Track]
   }
 
   type Venue {
@@ -38,7 +39,9 @@ const typeDefs = gql`
   type Track {
     id: ID!
     song: Song!
+    songTitle: String!
     show: Show!
+    showDate: String!
     position: String!
     arrow: Boolean
     reprise: Boolean

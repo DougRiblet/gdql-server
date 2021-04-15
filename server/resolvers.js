@@ -3,17 +3,17 @@ import prisma from './db.js';
 const resolvers = {
   Query: {
     show: (parent, args) => {
-      return prisma.show.findOne({
+      return prisma.show.findUnique({
         where: { date: args.date },
       })
     },
     venue: (parent, args) => {
-      return prisma.post.findOne({
+      return prisma.venue.findUnique({
         where: { id: args.id },
       })
     },
     song: (parent, args) => {
-      return prisma.post.findOne({
+      return prisma.song.findUnique({
         where: { id: args.id },
       })
     },

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Editor for show data to be submitted to GDQL database",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server/server.js",

@@ -8,50 +8,50 @@ datasource db {
 }
 
 model Show {
-  id        String   @id
+  id        String   @id @default(uuid())
   date      String   @unique @db.VarChar(7)
   venueId   String
   note      String[]
   tuning    String[]
   theme     String[]
   guest     String[]
-  Venue     Venue    @relation(fields: [venueId], references: [id])
-  Track     Track[]
+  venue     Venue    @relation(fields: [venueId], references: [id])
+  setlist   Track[]
 }
 
 model Song {
-  id         String       @id
+  id         String       @id @default(uuid())
   title      String       @unique
   aka        String[]
   source     Source       @default(ORIGINAL)
-  Track      Track[]
-  Songwriter Songwriter[]
+  played     Track[]
+  writer     Songwriter[]
 }
 
 model Songwriter {
-  id        String @id
+  id        String @id @default(uuid())
   fullname  String @unique
   shortname String
-  Song      Song[]
+  songs     Song[]
 }
 
 model Track {
-  id        String  @id
+  id        String  @id @default(uuid())
   position  String  @db.Char(3)
   songTitle String
   showDate  String  @db.VarChar(7)
   arrow     Boolean @default(false)
   reprise   Boolean @default(false)
-  Show      Show    @relation(fields: [showDate], references: [date])
-  Song      Song    @relation(fields: [songTitle], references: [title])
+  show      Show    @relation(fields: [showDate], references: [date])
+  song      Song    @relation(fields: [songTitle], references: [title])
 }
 
 model Venue {
-  id     String  @id
-  site   String
-  city   String
-  school String?
-  Show   Show[]
+  id       String  @id @default(uuid())
+  site     String
+  city     String
+  school   String?
+  shows    Show[]
   @@unique(fields: [site, city], name: "site_city")
 }
 

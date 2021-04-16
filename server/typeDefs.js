@@ -26,6 +26,7 @@ const typeDefs = gql`
     id: ID!
     site: String!
     city: String!
+    school: String
     shows: [Show]
   }
 
@@ -58,6 +59,7 @@ const typeDefs = gql`
     venue(id: ID!): Venue
     song(id: ID!): Song
     allsongs: [Song!]!
+    allvenues: [Venue!]!
   }
 
   type Mutation {

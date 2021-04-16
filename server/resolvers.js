@@ -24,6 +24,9 @@ const resolvers = {
         },
       });
     },
+    allvenues: (parent, args) => {
+      return prisma.venue.findMany();
+    },
   },
   Mutation: {
     createShow: (parent, args) => {

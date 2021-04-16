@@ -17,6 +17,13 @@ const resolvers = {
         where: { id: args.id },
       })
     },
+    allsongs: (parent, args) => {
+      return prisma.song.findMany({
+        include: {
+          writer: true,
+        },
+      });
+    },
   },
   Mutation: {
     createShow: (parent, args) => {

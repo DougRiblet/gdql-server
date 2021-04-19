@@ -7,7 +7,7 @@ import App from './components/App';
 
 const client = new ApolloClient({
   uri: 'https://localhost:8246',
-  cache: new InMemoryCache()
+  cache: new InMemoryCache(),
 });
 
 ReactDOM.render(

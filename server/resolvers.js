@@ -27,6 +27,16 @@ const resolvers = {
     allvenues: (parent, args) => {
       return prisma.venue.findMany();
     },
+    songByTitle: (parent, args) => {
+      return prisma.song.findFirst({
+        where: {
+          OR: [
+            { title: args.title },
+            { aka: { has: args.title } }
+          ]
+        },
+      });
+    },
   },
   Mutation: {
     createShow: (parent, args) => {

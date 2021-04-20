@@ -29,21 +29,21 @@ model Song {
 }
 
 model Songwriter {
-  id        String @id @default(uuid())
-  fullname  String @unique
-  shortname String
+  id        String   @id @default(uuid())
+  fullname  String   @unique
+  shortname String?
   songs     Song[]
 }
 
 model Track {
-  id        String  @id @default(uuid())
-  position  String  @db.Char(3)
+  id        String   @id @default(uuid())
+  position  String   @db.Char(3)
   songTitle String
-  showDate  String  @db.VarChar(7)
-  arrow     Boolean @default(false)
-  reprise   Boolean @default(false)
-  show      Show    @relation(fields: [showDate], references: [date])
-  song      Song    @relation(fields: [songTitle], references: [title])
+  showDate  String   @db.VarChar(7)
+  arrow     Boolean  @default(false)
+  reprise   Boolean  @default(false)
+  show      Show     @relation(fields: [showDate], references: [date])
+  song      Song     @relation(fields: [songTitle], references: [title])
 }
 
 model Venue {

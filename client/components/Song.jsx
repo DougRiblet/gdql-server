@@ -69,6 +69,7 @@ export function PreviewSong(props) {
     variables: { title: props.title },
   });
 
+  // eslint-disable-next-line no-unused-vars
   const [addSong, mutationResponse] = useMutation(ADD_SONG);
 
   const [ptitle, setPtitle] = useState(props.title);

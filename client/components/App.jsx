@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route, NavLink } from 'react-router-dom';
-import Song from './Song'
+import Song from './Song';
 
 export default function App() {
   return (

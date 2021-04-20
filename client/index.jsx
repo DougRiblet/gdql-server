@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client/react';
-import App from './components/App';
+import App from './components/App.jsx';
 import './sass/style.scss';
 
 const client = new ApolloClient({

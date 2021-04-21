@@ -2,11 +2,11 @@
   "name": "gdql-server",
   "version": "1.0.0",
   "description": "Apollo server to build GDQL database",
-  "main": "server/server.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server/server.js"
+    "start": "nodemon server.js"
   },
   "author": "Doug Riblet <dougriblet98@gmail.com>",
   "license": "ISC",

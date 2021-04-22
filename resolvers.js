@@ -58,12 +58,14 @@ const resolvers = {
     createSong: (parent, args) => {
       let writerAdds = {};
       if (args.writer && args.writer.length > 0) {
-        wcc = args.writer.map(w => ({
+        const wcc = args.writer.map(w => ({
           where: { fullname: w },
           create: { fullname: w }
         }));
         writerAdds = {
-          connectOrCreate: wcc,
+          writer: {
+            connectOrCreate: wcc,
+          }
         };
       }
       return prisma.song.create({

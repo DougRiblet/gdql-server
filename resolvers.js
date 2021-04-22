@@ -56,9 +56,9 @@ const resolvers = {
       })
     },
     createSong: (parent, args) => {
-      let writerAdds = [];
+      let writerAdds = {};
       if (args.writer && args.writer.length > 0) {
-        const wcc = args.writer.map(w => ({
+        wcc = args.writer.map(w => ({
           where: { fullname: w },
           create: { fullname: w }
         }));
@@ -70,7 +70,7 @@ const resolvers = {
         data: {
           title: args.title,
           source: args.source,
-          writer: writerAdds,
+          ...writerAdds
         },
       })
     },

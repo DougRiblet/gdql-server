@@ -61,6 +61,7 @@ const typeDefs = gql`
     allsongs: [Song!]!
     allvenues: [Venue!]!
     songByTitle(title: String!): Song
+    venueBySiteCity(site: String!, city: String!): Venue
   }
 
   type Mutation {

@@ -5,17 +5,27 @@ const resolvers = {
     show: (parent, args) => {
       return prisma.show.findUnique({
         where: { date: args.date },
-      })
+      });
     },
     venue: (parent, args) => {
       return prisma.venue.findUnique({
         where: { id: args.id },
-      })
+      });
+    },
+    venueBySiteCity: (parent, args) => {
+      return prisma.venue.findUnique({
+        where: {
+          site_city: {
+            site: args.site,
+            city: args.city,
+          },
+        },
+      });
     },
     song: (parent, args) => {
       return prisma.song.findUnique({
         where: { id: args.id },
-      })
+      });
     },
     allsongs: (parent, args) => {
       return prisma.song.findMany({
@@ -45,7 +55,7 @@ const resolvers = {
           date: args.date,
           venue: { connect: { id: args.venueId} }
         },
-      })
+      });
     },
     createVenue: (parent, args) => {
       return prisma.venue.create({
@@ -53,7 +63,7 @@ const resolvers = {
           site: args.site,
           city: args.city,
         },
-      })
+      });
     },
     createSong: (parent, args) => {
       let writerAdds = {};
@@ -74,7 +84,7 @@ const resolvers = {
           source: args.source,
           ...writerAdds
         },
-      })
+      });
     },
   },
 };

@@ -53,7 +53,12 @@ const resolvers = {
       return prisma.show.create({
         data: {
           date: args.date,
-          venue: { connect: { id: args.venueId} }
+          venue: {
+            connectOrCreate: {
+              where: { site_city: { site: args.site, city: args.city } },
+              create: { site: args.site, city: args.city },
+            },
+          },
         },
       });
     },
@@ -84,6 +89,11 @@ const resolvers = {
           source: args.source,
           ...writerAdds
         },
+      });
+    },
+    createTracks(parent, args) {
+      return prisma.track.createMany({
+        data: args.tracks,
       });
     },
   },

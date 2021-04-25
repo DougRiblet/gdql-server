@@ -54,6 +54,13 @@ const typeDefs = gql`
     TRADITIONAL
   }
 
+  input TrackInput {
+    songTitle: String
+    showDate: String
+    position: String
+    arrow: Boolean
+  }
+
   type Query {
     show(date: String!): Show
     venue(id: ID!): Venue
@@ -68,6 +75,7 @@ const typeDefs = gql`
     createShow(date: String!, venueId: ID!): Show!
     createSong(title: String!, source: Source!, writer: [String]): Song!
     createVenue(site: String!, city: String!): Venue!
+    createTracks(tracks: [TrackInput]): Number!
   }
 `
 

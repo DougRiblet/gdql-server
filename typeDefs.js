@@ -54,11 +54,15 @@ const typeDefs = gql`
     TRADITIONAL
   }
 
-  input TrackInput {
-    songTitle: String
-    showDate: String
-    position: String
-    arrow: Boolean
+  input CreateTrackInput {
+    songTitle: String!
+    showDate: String!
+    position: String!
+    arrow: Boolean!
+  }
+
+  type CreateTracksPayload {
+    count: Int!
   }
 
   type Query {
@@ -72,10 +76,10 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    createShow(date: String!, venueId: ID!): Show!
+    createShow(date: String!, site: String!, city: String!): Show!
     createSong(title: String!, source: Source!, writer: [String]): Song!
     createVenue(site: String!, city: String!): Venue!
-    createTracks(tracks: [TrackInput]): Number!
+    createTracks(tracks: [CreateTrackInput]!): CreateTracksPayload!
   }
 `
 

@@ -41,7 +41,7 @@ model Track {
   songTitle String
   showDate  String    @db.VarChar(7)
   arrow     Boolean   @default(false)
-  reprise   Boolean   @default(false)
+  reprise   Boolean?  @default(false)
   show      Show      @relation(fields: [showDate], references: [date])
   song      Song      @relation(fields: [songTitle], references: [title])
 }

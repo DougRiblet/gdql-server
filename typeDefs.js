@@ -59,6 +59,7 @@ const typeDefs = gql`
     showDate: String!
     position: String!
     arrow: Boolean!
+    reprise: Boolean
   }
 
   type CreateTracksPayload {

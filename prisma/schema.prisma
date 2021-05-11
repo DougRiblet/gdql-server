@@ -17,6 +17,7 @@ model Show {
   guest   String[]
   venue   Venue       @relation(fields: [venueId], references: [id])
   setlist Track[]
+  layout  Layout?       @default(S1_S2)
 }
 
 model Song {
@@ -60,4 +61,18 @@ enum Source {
   ORIGINAL
   COVER
   TRADITIONAL
+}
+
+enum Layout {
+  S1_S2
+  S1_S2_S3
+  S1_PN_S2
+  S1_S2_PN_S3
+  S1_PN_S2_S3
+  S1_PNS2
+  S1_PNS2_S3
+  AC_S1_S2
+  S1
+  S1_S2_DY
+  S1_DY
 }

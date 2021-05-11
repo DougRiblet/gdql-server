@@ -11,6 +11,7 @@ const typeDefs = gql`
     tuning: [String]
     theme: [String]
     guest: [String]
+    layout: Layout
   }
 
   type Song {
@@ -54,12 +55,33 @@ const typeDefs = gql`
     TRADITIONAL
   }
 
+  enum Layout {
+    S1_S2
+    S1_S2_S3
+    S1_PN_S2
+    S1_S2_PN_S3
+    S1_PN_S2_S3
+    S1_PNS2
+    S1_PNS2_S3
+    AC_S1_S2
+    S1
+    S1_S2_DY
+    S1_DY
+  }
+
   input CreateTrackInput {
     songTitle: String!
     showDate: String!
     position: String!
     arrow: Boolean!
     reprise: Boolean
+  }
+
+  input CreateShowInput {
+    date: String!
+    site: String!
+    city: String!
+    layout: Layout
   }
 
   type CreateTracksPayload {
@@ -77,7 +99,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    createShow(date: String!, site: String!, city: String!): Show!
+    createShow(show: CreateShowInput!): Show!
     createSong(title: String!, source: Source!, writer: [String]): Song!
     createVenue(site: String!, city: String!): Venue!
     createTracks(tracks: [CreateTrackInput]!): CreateTracksPayload!

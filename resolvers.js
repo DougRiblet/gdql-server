@@ -52,11 +52,12 @@ const resolvers = {
     createShow: (parent, args) => {
       return prisma.show.create({
         data: {
-          date: args.date,
+          date: args.show.date,
+          layout: args.show.layout,
           venue: {
             connectOrCreate: {
-              where: { site_city: { site: args.site, city: args.city } },
-              create: { site: args.site, city: args.city },
+              where: { site_city: { site: args.show.site, city: args.show.city } },
+              create: { site: args.show.site, city: args.show.city },
             },
           },
         },

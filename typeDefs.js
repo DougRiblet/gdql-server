@@ -90,7 +90,7 @@ const typeDefs = gql`
     date: String!
     site: String!
     city: String!
-    layout: Layout
+    setshape: Setshape
   }
 
   type CreateTracksPayload {

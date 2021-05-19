@@ -53,7 +53,11 @@ const resolvers = {
       return prisma.show.create({
         data: {
           date: args.show.date,
-          layout: args.show.layout,
+          setshape: {
+            connect: {
+              setmod: args.show.setshape,
+            },
+          },
           venue: {
             connectOrCreate: {
               where: { site_city: { site: args.show.site, city: args.show.city } },

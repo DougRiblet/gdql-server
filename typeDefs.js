@@ -12,6 +12,15 @@ const typeDefs = gql`
     theme: [String]
     guest: [String]
     layout: Layout
+    setshape: Setshape
+    shape: String
+  }
+
+  type Setshape {
+    id: ID!
+    setmod: String!
+    comment: String
+    shows: [Show]
   }
 
   type Song {

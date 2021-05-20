@@ -55,7 +55,7 @@ const resolvers = {
           date: args.show.date,
           setshape: {
             connect: {
-              setmod: args.show.setshape,
+              setmod: args.show.shape,
             },
           },
           venue: {

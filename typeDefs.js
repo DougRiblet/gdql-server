@@ -11,7 +11,6 @@ const typeDefs = gql`
     tuning: [String]
     theme: [String]
     guest: [String]
-    layout: Layout
     setshape: Setshape
     shape: String
   }
@@ -62,20 +61,6 @@ const typeDefs = gql`
     ORIGINAL
     COVER
     TRADITIONAL
-  }
-
-  enum Layout {
-    S1_S2
-    S1_S2_S3
-    S1_PN_S2
-    S1_S2_PN_S3
-    S1_PN_S2_S3
-    S1_PNS2
-    S1_PNS2_S3
-    AC_S1_S2
-    S1
-    S1_S2_DY
-    S1_DY
   }
 
   input CreateTrackInput {

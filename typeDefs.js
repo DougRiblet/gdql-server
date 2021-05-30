@@ -13,6 +13,7 @@ const typeDefs = gql`
     guest: [String]
     setshape: Setshape
     shape: String
+    archtop: String
   }
 
   type Setshape {

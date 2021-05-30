@@ -19,6 +19,7 @@ model Show {
   setlist   Track[]
   setshape  Setshape?   @relation(fields: [shape], references: [setmod])
   shape     String?     @default("S1_S2")
+  archtop   String?
 }
 
 model Setshape {

@@ -58,6 +58,13 @@ const typeDefs = gql`
     reprise: Boolean
   }
 
+  type Album {
+  id: ID!
+  title: String!
+  released: String!
+  shows: Show[]
+}
+
   enum Source {
     ORIGINAL
     COVER

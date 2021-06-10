@@ -20,6 +20,7 @@ model Show {
   setshape  Setshape?   @relation(fields: [shape], references: [setmod])
   shape     String?     @default("S1_S2")
   archtop   String?
+  album     Album[]
 }
 
 model Setshape {
@@ -64,6 +65,13 @@ model Venue {
   shows  Show[]
 
   @@unique([site, city], name: "site_city")
+}
+
+model Album {
+  id         String      @id @default(uuid())
+  title      String
+  released   String
+  shows      Show[]
 }
 
 enum Source {

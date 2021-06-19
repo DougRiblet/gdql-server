@@ -62,7 +62,7 @@ const typeDefs = gql`
   id: ID!
   title: String!
   released: String!
-  shows: Show[]
+  shows: [Show]
 }
 
   enum Source {

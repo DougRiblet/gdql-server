@@ -14,6 +14,7 @@ const typeDefs = gql`
     setshape: Setshape
     shape: String
     archtop: String
+    album: [Album]
   }
 
   type Setshape {
@@ -61,6 +62,7 @@ const typeDefs = gql`
   type Album {
   id: ID!
   title: String!
+  short: String!
   released: String!
   shows: [Show]
 }

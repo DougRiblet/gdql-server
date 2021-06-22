@@ -70,6 +70,7 @@ model Venue {
 model Album {
   id         String      @id @default(uuid())
   title      String
+  short      String
   released   String
   shows      Show[]
 }

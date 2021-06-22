@@ -75,6 +75,19 @@ const resolvers = {
         },
       });
     },
+    createAlbum: (parent, args) => {
+      const showAdds = args.shows.map(s => ({ date: s }));
+      return prisma.album.create({
+        data: {
+          title: args.title,
+          short: args.short,
+          released: args.released,
+          shows: {
+            connect: showAdds,
+          },
+        },
+      });
+    },
     createSong: (parent, args) => {
       let writerAdds = {};
       if (args.writer && args.writer.length > 0) {

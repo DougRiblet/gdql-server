@@ -88,6 +88,13 @@ const typeDefs = gql`
     shape: String!
   }
 
+  input CreateAlbumInput {
+    title: String!
+    short: String!
+    released: String!
+    shows: [String]
+  }
+
   type CreateTracksPayload {
     count: Int!
   }
@@ -107,6 +114,7 @@ const typeDefs = gql`
     createSong(title: String!, source: Source!, writer: [String]): Song!
     createVenue(site: String!, city: String!): Venue!
     createTracks(tracks: [CreateTrackInput]!): CreateTracksPayload!
+    createAlbum(album: CreateAlbumInput!): Album!
   }
 `
 
